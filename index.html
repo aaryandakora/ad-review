@@ -9,6 +9,23 @@
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f7faff;color:#172033}
 button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bottom:1px solid #e8eef7;box-shadow:0 4px 18px rgba(30,70,120,.06);padding:18px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}.logo{font-size:24px;font-weight:800}.nav{display:flex;gap:18px;align-items:center}.nav button{background:transparent;color:#52617a;font-size:14px}.login{background:#1769ff!important;color:#fff!important;padding:9px 14px;border-radius:10px!important;font-weight:700}.hero{padding:70px 5%;background:linear-gradient(135deg,#fff,#eef7ff 55%,#f7f4ff);border-bottom:1px solid #e5edf8}.hero h1{font-size:clamp(38px,6vw,72px);max-width:760px;margin:0 0 16px;letter-spacing:-2px}.hero p{font-size:19px;color:#5d6b82;max-width:650px}.cta{background:#1769ff;color:#fff;box-shadow:0 10px 24px rgba(23,105,255,.22);padding:13px 20px;border-radius:12px;font-weight:700;margin-top:15px}.wrap{max-width:1180px;margin:auto;padding:40px 5%}.section-title{display:flex;justify-content:space-between;align-items:center}.section-title span{color:#7b879a;font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.search-box{margin:18px 0 22px;padding:16px;border:1px solid #e4ebf5;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(31,70,120,.06)}.search-row{display:grid;grid-template-columns:1fr 190px;gap:10px}.search-input,.category-select{width:100%;padding:13px 15px;border:1px solid #dce5f0;border-radius:12px;font:inherit;background:#fff;outline:none}.search-input:focus,.category-select:focus{border-color:#1769ff;box-shadow:0 0 0 4px rgba(23,105,255,.08)}.search-help{margin:8px 0 0;color:#68768b;font-size:12px}.search-count{margin-top:10px;color:#52617a;font-size:13px;font-weight:700}@media(max-width:650px){.search-row{grid-template-columns:1fr}}.card{background:#fff;border:1px solid #e8e9ef;border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(31,70,120,.09);transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(31,70,120,.12)}.thumb{height:150px;background:linear-gradient(135deg,#1769ff,#6d5dfc);display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px;font-weight:800}.card-body{padding:18px}.brand{color:#66748b;font-size:13px}.score{font-size:18px;font-weight:800;margin-top:10px}.tag{display:inline-block;background:#eef5ff;color:#3164b7;padding:5px 9px;border-radius:20px;font-size:12px;margin-top:10px}.ratebtn,.submit{width:100%;margin-top:15px;background:#1769ff;color:#fff;padding:11px;border-radius:10px;font-weight:700}.panel{background:#fff;border:1px solid #e4ebf5;border-radius:18px;padding:24px;margin-top:25px}.rank{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #eee}.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:#fff;border-radius:20px;max-width:620px;width:100%;padding:26px;max-height:90vh;overflow:auto}.close{float:right;background:#eef3f9;color:#40516c;border-radius:50%;width:34px;height:34px}.choice{margin:14px 0}.choice label{display:block;margin-bottom:7px;font-weight:700}.stars{font-size:28px;letter-spacing:3px}.stars span{color:#c9cbd3}.stars span.active{color:#f5b301}.choice textarea,.choice select,.email{width:100%;padding:11px;border:1px solid #dce5f0;border-radius:9px;font:inherit}.hint{font-size:13px;color:#68768b}.toast{position:fixed;bottom:20px;right:20px;background:#172033;color:#fff;padding:13px 18px;border-radius:10px;display:none;z-index:50}.footer{padding:40px 5%;background:#172033;color:#b8c3d4;margin-top:40px;text-align:center}.authbox{max-width:440px}.hidden{display:none}
+.submit-ad-btn{background:#1769ff!important;color:#fff!important;padding:9px 14px!important;border-radius:10px!important;font-size:14px!important;font-weight:800!important}
+.submit-ad-hero{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.submit-ad-secondary{background:#fff;color:#1769ff;border:1px solid #bcd2ff;padding:13px 20px;border-radius:12px;font-weight:800}
+.submit-ad-note{background:#eef7ff;border:1px solid #d7e7ff;border-radius:14px;padding:12px 14px;color:#31557f;font-size:13px;margin:12px 0 18px}
+.submit-ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.submit-ad-grid .full{grid-column:1/-1}
+.submit-ad-field label{display:block;font-weight:800;margin-bottom:6px;font-size:13px}
+.submit-ad-field input,.submit-ad-field select,.submit-ad-field textarea{width:100%;padding:11px 12px;border:1px solid #dce5f0;border-radius:10px;font:inherit;background:#fff;box-sizing:border-box}
+.submit-ad-field textarea{min-height:82px;resize:vertical}
+.submit-ad-optional{margin-top:16px;border-top:1px solid #e8eef7;padding-top:14px}
+.submit-ad-optional summary{cursor:pointer;font-weight:800;color:#31557f}
+.submit-ad-actions{display:flex;gap:10px;margin-top:18px}
+.submit-ad-actions button{flex:1;padding:12px;border-radius:11px;font-weight:800}
+.submit-ad-cancel{background:#eef3f9;color:#40516c}
+.submit-ad-submit{background:#1769ff;color:#fff}
+@media(max-width:650px){.submit-ad-grid{grid-template-columns:1fr}.submit-ad-grid .full{grid-column:auto}.submit-ad-actions{flex-direction:column}}
+
 .profile-panel{margin-top:25px}.profile-head{display:flex;justify-content:space-between;align-items:center;gap:20px}.eyebrow{font-size:12px;font-weight:800;color:#1769ff;letter-spacing:1px}.profile-head h2{margin:5px 0}.points-box{min-width:110px;text-align:center;background:#eef5ff;border-radius:16px;padding:12px}.points-box strong{display:block;font-size:30px;color:#1769ff}.points-box span{font-size:12px;color:#66748b}.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.profile-stats div{background:#f7faff;border:1px solid #e4ebf5;border-radius:12px;padding:14px;text-align:center}.profile-stats strong{display:block;font-size:20px}.profile-stats span{font-size:12px;color:#66748b}.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.badge{border:1px solid #e4ebf5;border-radius:12px;padding:12px;text-align:center;opacity:.45}.badge.unlocked{opacity:1;background:#fffdf2;border-color:#f0d77a}.badge b,.badge small{display:block}.badge small{color:#66748b;margin-top:4px}
 .leaderboard-row{display:grid;grid-template-columns:55px 1fr 110px 100px;gap:12px;align-items:center;padding:14px 8px;border-bottom:1px solid #edf1f7}.leaderboard-row:last-child{border-bottom:0}.leaderboard-rank{font-size:20px;font-weight:800}.leaderboard-name{font-weight:700}.leaderboard-name small{display:block;color:#7b879a;font-size:12px;font-weight:400;margin-top:3px}.leaderboard-points{text-align:right;font-weight:800;color:#1769ff}.leaderboard-count{text-align:right;color:#52617a;font-size:13px}.leaderboard-me{background:#eef5ff;border-radius:12px}.leaderboard-empty{padding:18px 0;color:#68768b}.reviews-list{display:grid;gap:14px}.review-card{border:1px solid #e4ebf5;border-radius:14px;padding:16px;background:#fff}.review-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.review-user{font-weight:800}.review-meta{font-size:12px;color:#7b879a;margin-top:3px}.review-ad{font-size:13px;color:#3164b7;margin-top:8px;font-weight:700}.review-body{margin:10px 0;color:#34435a;line-height:1.55;white-space:pre-wrap}.like-btn{background:#f4f7fb;color:#52617a;border:1px solid #dce5f0;border-radius:9px;padding:7px 10px;font-weight:700}.like-btn.liked{background:#eef5ff;color:#1769ff;border-color:#bcd2ff}.review-empty{padding:18px 0;color:#68768b}.review-more{margin-top:14px;color:#68768b;font-size:12px}@media(max-width:650px){header{padding:15px 4%}.nav{gap:8px}.nav button{font-size:12px}.hero{padding:55px 5%}.wrap{padding:30px 4%}.profile-stats,.badges{grid-template-columns:1fr}.profile-head{align-items:flex-start}.leaderboard-row{grid-template-columns:42px 1fr 80px}.leaderboard-count{display:none}}
 
@@ -26,14 +43,14 @@ button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bo
   <div class="nav">
     <button onclick="scrollToId('ads')">Explore Ads</button>
     <button onclick="scrollToId('profile')">Profile</button>
-    <button onclick="scrollToId('rankings')">Rankings</button><button onclick="scrollToId('reviews')">Reviews</button>
+    <button onclick="scrollToId('rankings')">Rankings</button><button onclick="scrollToId('reviews')">Reviews</button><button class="submit-ad-btn" onclick="openSubmitAd()">➕ Submit Ad</button>
     <button class="login" id="authBtn" onclick="openAuth()">Sign in</button>
   </div>
 </header>
 <section class="hero">
   <h1>Rate the ad.<br>Not the product.</h1>
   <p>Watch advertisements, share your opinion, and discover which ads people actually love.</p>
-  <button class="cta" onclick="scrollToId('ads')">Explore Advertisements →</button>
+  <button class="cta" onclick="scrollToId('ads')">Explore Advertisements →</button><div class="submit-ad-hero"><button class="submit-ad-secondary" onclick="openSubmitAd()">🚀 Submit an Advertisement &amp; Earn AdCoins</button></div>
 </section>
 <main class="wrap">
 <section id="ads">
@@ -72,6 +89,80 @@ button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bo
   <div id="adRanking"></div>
 </section>
 </main>
+
+<div class="modal" id="submitAdModal">
+  <div class="modalbox">
+    <button class="close" onclick="closeSubmitAd()">×</button>
+    <h2>🚀 Submit an Advertisement</h2>
+    <p class="hint">Know an ad that should be on AD REVIEW? Submit the basics in less than a minute.</p>
+    <div class="submit-ad-note">🎁 Quality submissions can earn AdCoins after approval. No video upload is required — just share the official/source link.</div>
+
+    <div class="submit-ad-grid">
+      <div class="submit-ad-field">
+        <label>🏢 Brand *</label>
+        <input id="submitBrand" type="text" maxlength="120" placeholder="e.g. Nike">
+      </div>
+      <div class="submit-ad-field">
+        <label>📺 Ad Title *</label>
+        <input id="submitTitle" type="text" maxlength="180" placeholder="e.g. Winning Isn't For Everyone">
+      </div>
+      <div class="submit-ad-field full">
+        <label>🔗 Ad / Source Link *</label>
+        <input id="submitSourceUrl" type="url" placeholder="https://...">
+      </div>
+      <div class="submit-ad-field">
+        <label>📂 Category *</label>
+        <select id="submitCategory">
+          <option value="">Choose category</option>
+          <option>Automobile</option>
+          <option>Beauty</option>
+          <option>Education</option>
+          <option>Entertainment</option>
+          <option>Fashion</option>
+          <option>Finance</option>
+          <option>Food &amp; Beverage</option>
+          <option>Healthcare</option>
+          <option>Local Business</option>
+          <option>Sports</option>
+          <option>Technology</option>
+          <option>Travel</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <details class="submit-ad-optional">
+      <summary>✨ Add optional details (recommended, but not required)</summary>
+      <div class="submit-ad-grid" style="margin-top:14px">
+        <div class="submit-ad-field">
+          <label>⭐ Featured Person / Celebrity</label>
+          <input id="submitFeaturedPerson" type="text" maxlength="150" placeholder="Actor, athlete, singer, influencer...">
+        </div>
+        <div class="submit-ad-field">
+          <label>👑 Brand Ambassador</label>
+          <input id="submitAmbassador" type="text" maxlength="150" placeholder="Official brand ambassador">
+        </div>
+        <div class="submit-ad-field">
+          <label>📦 Product</label>
+          <input id="submitProduct" type="text" maxlength="150" placeholder="Product name">
+        </div>
+        <div class="submit-ad-field">
+          <label>🏷️ Keywords</label>
+          <input id="submitKeywords" type="text" maxlength="300" placeholder="e.g. cricket, premium, funny">
+        </div>
+        <div class="submit-ad-field full">
+          <label>📝 Short Description</label>
+          <textarea id="submitDescription" maxlength="1000" placeholder="Anything useful about this advertisement..."></textarea>
+        </div>
+      </div>
+    </details>
+
+    <div class="submit-ad-actions">
+      <button class="submit-ad-cancel" onclick="closeSubmitAd()">Cancel</button>
+      <button class="submit-ad-submit" onclick="submitAdSuggestion()">🚀 Submit Ad</button>
+    </div>
+  </div>
+</div>
 <div class="modal" id="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><h2 id="modalTitle">Rate this ad</h2><p id="modalBrand"></p><div id="ratingFields"></div><div class="choice"><label>Would this ad make you interested in the product?</label><select id="interest"><option value="yes">Yes</option><option value="maybe">Maybe</option><option value="no">No</option></select></div><div class="review-composer"><h3>💭 Your take? 👀</h3><p class="sub">Be honest. Pick your vibe and say what you really think.</p><div><strong>Pick your vibe</strong><div id="reactionPicker" class="reaction-grid"></div></div><p id="reviewMode" class="review-mode" style="display:none"></p><textarea id="review" class="review-text" maxlength="2000" placeholder="What did you REALLY think?"></textarea><div class="review-tools"><label class="media-label">📸 Add photo / screenshot<input id="reviewPhotos" type="file" accept="image/*" multiple onchange="previewReviewPhotos(this)"></label><span id="charCount" class="char-count">0 / 2,000</span></div><div id="photoPreview" class="preview-row"></div><button id="postReviewBtn" class="post-review-btn" onclick="submitRating()">🚀 Post Review</button></div><p id="authHint" class="hint" style="display:none">You must be signed in to save your rating.</p></div></div>
 <div class="modal" id="detailModal"><div class="modalbox detail-box"><button class="close" onclick="closeDetail()">×</button><div id="detailContent"><div class="review-empty">Loading ad details…</div></div></div></div>
 <div class="modal" id="authModal"><div class="modalbox authbox"><button class="close" onclick="closeAuth()">×</button><h2>Sign in to AD REVIEW</h2><p>We'll email you a secure magic link. No password needed.</p><input class="email" id="email" type="email" placeholder="you@example.com"><button class="submit" onclick="sendMagicLink()">Send Magic Link</button><p id="authMsg" class="hint"></p></div></div>
@@ -210,6 +301,56 @@ async function loadData(){
 
 async function submitRating(){if(!currentUser){closeModal();openAuth();showToast('Please sign in first.');return}const d=ratings._draft||{};const keys=['creativity','entertainment','message','emotion','memorable'];if(keys.some(k=>!d[k])){showToast('Please rate all 5 categories.');return}const[{data:existing},{data:existingReview}]=await Promise.all([supabaseClient.from('ratings').select('id').eq('ad_id',selected.id).eq('user_id',currentUser.id).maybeSingle(),supabaseClient.from('reviews').select('id,photo_urls').eq('ad_id',selected.id).eq('user_id',currentUser.id).maybeSingle()]);const payload={ad_id:selected.id,user_id:currentUser.id,...d,purchase_interest:document.getElementById('interest').value};const{error}=await supabaseClient.from('ratings').upsert(payload,{onConflict:'ad_id,user_id'});if(error){showToast(error.message);return}const body=document.getElementById('review').value.trim();let reviewAdded=false;let reviewUpdated=false;let photoUrls=existingReview?.photo_urls||[];if(selectedReviewFiles.length){photoUrls=[];for(const file of selectedReviewFiles){if(file.size>10*1024*1024){showToast('Each image must be 10 MB or smaller.');return}if(!['image/jpeg','image/png','image/webp'].includes(file.type)){showToast('Please use JPG, PNG, or WebP images only.');return}const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const path=`${currentUser.id}/${Date.now()}-${crypto.randomUUID()}-${safeName}`;const{error:ue}=await supabaseClient.storage.from('review-images').upload(path,file,{contentType:file.type,upsert:false});if(ue){showToast('Image upload failed: '+ue.message);return}photoUrls.push(path)}}let reviewId=null;let pointsToAdd=0;let reviewReward=0;let photoReward=0;const hadExistingPhotos=!!(existingReview&&Array.isArray(existingReview.photo_urls)&&existingReview.photo_urls.length);if(existingReview){const{error:re}=await supabaseClient.from('reviews').update({body:body||'Shared my reaction to this ad.',reactions:selectedReactions,photo_urls:photoUrls}).eq('id',existingReview.id).eq('user_id',currentUser.id);if(re){showToast(re.message);return}reviewId=existingReview.id;reviewUpdated=true}else if(body||selectedReactions.length||photoUrls.length){const{data:newReview,error:re}=await supabaseClient.from('reviews').insert({ad_id:selected.id,user_id:currentUser.id,body:body||'Shared my reaction to this ad.',reactions:selectedReactions,photo_urls:photoUrls}).select('id').single();if(re){showToast(re.message);return}reviewId=newReview.id;reviewAdded=true}if(!existing){const{data:rewardPoints,error:rewardError}=await supabaseClient.rpc('award_adcoins',{p_user_id:currentUser.id,p_amount:5,p_reason:'Rated an ad',p_reference_type:'rating',p_reference_id:selected.id});if(rewardError){showToast('Rating saved, but AdCoins reward could not be recorded: '+rewardError.message);return}pointsToAdd=5}if(reviewAdded){const{error:reviewRewardError}=await supabaseClient.rpc('award_adcoins',{p_user_id:currentUser.id,p_amount:10,p_reason:'Wrote a review',p_reference_type:'review',p_reference_id:reviewId});if(reviewRewardError){showToast('Review saved, but the review AdCoins reward could not be recorded: '+reviewRewardError.message);return}reviewReward=10}if(reviewId&&photoUrls.length&&!hadExistingPhotos){const{error:photoRewardError}=await supabaseClient.rpc('award_adcoins',{p_user_id:currentUser.id,p_amount:5,p_reason:'Added a photo to a review',p_reference_type:'review_photo',p_reference_id:reviewId});if(photoRewardError){showToast('Review saved, but the photo AdCoins reward could not be recorded: '+photoRewardError.message);return}photoReward=5}ratings._draft={};closeModal();await loadData();await refreshProfile();await loadLeaderboard();await loadReviews();const earned=pointsToAdd+reviewReward+photoReward;showToast(reviewUpdated?'Your review was updated!':reviewAdded?'Your review was posted! +'+earned+' AdCoins':existing?'Your rating was updated!':'Your rating was saved! +'+earned+' AdCoins');if(selected)await openDetail(selected.id)}
 document.getElementById('adSearch')?.addEventListener('input',render);document.getElementById('categoryFilter')?.addEventListener('change',render);
+
+function openSubmitAd(){
+  if(!currentUser){
+    openAuth();
+    showToast('Please sign in to submit an advertisement.');
+    return;
+  }
+  document.getElementById('submitAdModal').classList.add('open');
+}
+function closeSubmitAd(){document.getElementById('submitAdModal').classList.remove('open')}
+async function submitAdSuggestion(){
+  if(!currentUser){closeSubmitAd();openAuth();showToast('Please sign in first.');return}
+  const brand=document.getElementById('submitBrand').value.trim();
+  const title=document.getElementById('submitTitle').value.trim();
+  const sourceUrl=document.getElementById('submitSourceUrl').value.trim();
+  const category=document.getElementById('submitCategory').value;
+  if(!brand||!title||!sourceUrl||!category){showToast('Please complete the 4 required fields.');return}
+  let parsed;
+  try{
+    parsed=new URL(sourceUrl);
+    if(!['http:','https:'].includes(parsed.protocol)) throw new Error('bad protocol');
+  }catch(e){
+    showToast('Please enter a valid http/https ad or source link.');
+    return;
+  }
+  const payload={
+    user_id:currentUser.id,
+    brand,
+    title,
+    source_url:sourceUrl,
+    category,
+    featured_person:document.getElementById('submitFeaturedPerson').value.trim(),
+    brand_ambassador:document.getElementById('submitAmbassador').value.trim(),
+    product_name:document.getElementById('submitProduct').value.trim(),
+    description:document.getElementById('submitDescription').value.trim(),
+    search_keywords:document.getElementById('submitKeywords').value.trim(),
+    status:'pending'
+  };
+  const btn=document.querySelector('.submit-ad-submit');
+  btn.disabled=true;
+  btn.textContent='Submitting…';
+  const {error}=await supabaseClient.from('ad_submissions').insert(payload);
+  btn.disabled=false;
+  btn.textContent='🚀 Submit Ad';
+  if(error){showToast('Submission failed: '+error.message);return}
+  closeSubmitAd();
+  ['submitBrand','submitTitle','submitSourceUrl','submitFeaturedPerson','submitAmbassador','submitProduct','submitKeywords','submitDescription'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('submitCategory').value='';
+  showToast('🎉 Ad submitted! It is now pending review. Quality approvals can earn AdCoins.');
+}
 function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2800)}function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 (async()=>{await loadSession();await loadData();await loadLeaderboard();await loadReviews()})();
 </script>
