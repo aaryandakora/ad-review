@@ -9,6 +9,8 @@
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f7faff;color:#172033}
 button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bottom:1px solid #e8eef7;box-shadow:0 4px 18px rgba(30,70,120,.06);padding:18px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}.logo{font-size:24px;font-weight:800}.nav{display:flex;gap:18px;align-items:center}.nav button{background:transparent;color:#52617a;font-size:14px}.login{background:#1769ff!important;color:#fff!important;padding:9px 14px;border-radius:10px!important;font-weight:700}.hero{padding:70px 5%;background:linear-gradient(135deg,#fff,#eef7ff 55%,#f7f4ff);border-bottom:1px solid #e5edf8}.hero h1{font-size:clamp(38px,6vw,72px);max-width:760px;margin:0 0 16px;letter-spacing:-2px}.hero p{font-size:19px;color:#5d6b82;max-width:650px}.cta{background:#1769ff;color:#fff;box-shadow:0 10px 24px rgba(23,105,255,.22);padding:13px 20px;border-radius:12px;font-weight:700;margin-top:15px}.wrap{max-width:1180px;margin:auto;padding:40px 5%}.section-title{display:flex;justify-content:space-between;align-items:center}.section-title span{color:#7b879a;font-size:13px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.card{background:#fff;border:1px solid #e8e9ef;border-radius:18px;overflow:hidden;box-shadow:0 8px 26px rgba(31,70,120,.09);transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(31,70,120,.12)}.thumb{height:150px;background:linear-gradient(135deg,#1769ff,#6d5dfc);display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px;font-weight:800}.card-body{padding:18px}.brand{color:#66748b;font-size:13px}.score{font-size:18px;font-weight:800;margin-top:10px}.tag{display:inline-block;background:#eef5ff;color:#3164b7;padding:5px 9px;border-radius:20px;font-size:12px;margin-top:10px}.ratebtn,.submit{width:100%;margin-top:15px;background:#1769ff;color:#fff;padding:11px;border-radius:10px;font-weight:700}.panel{background:#fff;border:1px solid #e4ebf5;border-radius:18px;padding:24px;margin-top:25px}.rank{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #eee}.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modalbox{background:#fff;border-radius:20px;max-width:620px;width:100%;padding:26px;max-height:90vh;overflow:auto}.close{float:right;background:#eef3f9;color:#40516c;border-radius:50%;width:34px;height:34px}.choice{margin:14px 0}.choice label{display:block;margin-bottom:7px;font-weight:700}.stars{font-size:28px;letter-spacing:3px}.stars span{color:#c9cbd3}.stars span.active{color:#f5b301}.choice textarea,.choice select,.email{width:100%;padding:11px;border:1px solid #dce5f0;border-radius:9px;font:inherit}.hint{font-size:13px;color:#68768b}.toast{position:fixed;bottom:20px;right:20px;background:#172033;color:#fff;padding:13px 18px;border-radius:10px;display:none;z-index:50}.footer{padding:40px 5%;background:#172033;color:#b8c3d4;margin-top:40px;text-align:center}.authbox{max-width:440px}.hidden{display:none}@media(max-width:650px){header{padding:15px 4%}.nav{gap:8px}.nav button{font-size:12px}.hero{padding:55px 5%}.wrap{padding:30px 4%}}
+
+.profile-panel{margin-top:25px}.profile-head{display:flex;justify-content:space-between;align-items:center;gap:20px}.eyebrow{font-size:12px;font-weight:800;color:#1769ff;letter-spacing:1px}.profile-head h2{margin:5px 0}.points-box{min-width:110px;text-align:center;background:#eef5ff;border-radius:16px;padding:12px}.points-box strong{display:block;font-size:30px;color:#1769ff}.points-box span{font-size:12px;color:#66748b}.profile-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.profile-stats div{background:#f7faff;border:1px solid #e4ebf5;border-radius:12px;padding:14px;text-align:center}.profile-stats strong{display:block;font-size:20px}.profile-stats span{font-size:12px;color:#66748b}.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.badge{border:1px solid #e4ebf5;border-radius:12px;padding:12px;text-align:center;opacity:.45}.badge.unlocked{opacity:1;background:#fffdf2;border-color:#f0d77a}.badge b,.badge small{display:block}.badge small{color:#66748b;margin-top:4px}@media(max-width:650px){.profile-stats,.badges{grid-template-columns:1fr}.profile-head{align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -16,7 +18,7 @@ button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bo
   <div class="logo">AD REVIEW</div>
   <div class="nav">
     <button onclick="scrollToId('ads')">Explore Ads</button>
-    <button onclick="scrollToId('rankings')">Rankings</button>
+    <button onclick="scrollToId('profile')">Profile</button><button onclick="scrollToId('rankings')">Rankings</button>
     <button class="login" id="authBtn" onclick="openAuth()">Sign in</button>
   </div>
 </header>
@@ -36,6 +38,28 @@ button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bo
 <section class="panel">
   <h2>📊 How Ad Score works</h2>
   <p>Community ratings are combined into a simple <b>0–100 Ad Score</b>. The score is based on creativity, entertainment, message clarity, emotional impact and memorability.</p>
+</section>
+
+
+<section id="profile" class="panel profile-panel hidden">
+  <div class="profile-head">
+    <div>
+      <div class="eyebrow">YOUR PROFILE</div>
+      <h2 id="profileName">Ad Critic</h2>
+      <p id="profileEmail" class="hint"></p>
+    </div>
+    <div class="points-box"><strong id="profilePoints">0</strong><span>points</span></div>
+  </div>
+  <div class="profile-stats">
+    <div><strong id="profileRatings">0</strong><span>Ads rated</span></div>
+    <div><strong id="profileReviews">0</strong><span>Reviews</span></div>
+    <div><strong id="profileBadge">New Critic</strong><span>Badge</span></div>
+  </div>
+  <div class="badges">
+    <div class="badge" id="badge1">⭐ <b>First Rating</b><small>Rate 1 ad</small></div>
+    <div class="badge" id="badge5">🔥 <b>Active Critic</b><small>Rate 5 ads</small></div>
+    <div class="badge" id="badge10">🏆 <b>Ad Expert</b><small>Rate 10 ads</small></div>
+  </div>
 </section>
 
 <section id="rankings" class="panel">
@@ -130,9 +154,45 @@ async function sendMagicLink(){
   const {error}=await supabaseClient.auth.signInWithOtp({email,options:{emailRedirectTo:window.location.origin}});
   document.getElementById('authMsg').textContent=error?error.message:'Magic link sent. Check your email.';
 }
+
+async function ensureProfile(){
+  if(!currentUser) return;
+  const displayName=(currentUser.email||'Ad Critic').split('@')[0].slice(0,30) || 'Ad Critic';
+  await supabaseClient.from('profiles').upsert(
+    {id:currentUser.id,display_name:displayName},
+    {onConflict:'id',ignoreDuplicates:true}
+  );
+}
+async function refreshProfile(){
+  const panel=document.getElementById('profile');
+  if(!currentUser){panel.classList.add('hidden');return;}
+  panel.classList.remove('hidden');
+  const [{data:p},{data:rs},{data:revs}]=await Promise.all([
+    supabaseClient.from('profiles').select('display_name,points').eq('id',currentUser.id).maybeSingle(),
+    supabaseClient.from('ratings').select('id').eq('user_id',currentUser.id),
+    supabaseClient.from('reviews').select('id').eq('user_id',currentUser.id)
+  ]);
+  const points=p?.points||0, rc=(rs||[]).length, revc=(revs||[]).length;
+  document.getElementById('profileName').textContent=p?.display_name||'Ad Critic';
+  document.getElementById('profileEmail').textContent=currentUser.email||'';
+  document.getElementById('profilePoints').textContent=points;
+  document.getElementById('profileRatings').textContent=rc;
+  document.getElementById('profileReviews').textContent=revc;
+  const badge=rc>=10?'🏆 Ad Expert':rc>=5?'🔥 Active Critic':rc>=1?'⭐ First Rating':'New Critic';
+  document.getElementById('profileBadge').textContent=badge;
+  document.getElementById('badge1').classList.toggle('unlocked',rc>=1);
+  document.getElementById('badge5').classList.toggle('unlocked',rc>=5);
+  document.getElementById('badge10').classList.toggle('unlocked',rc>=10);
+}
+
 async function loadSession(){
-  const {data}=await supabaseClient.auth.getSession(); currentUser=data.session?.user||null; updateAuth();
-  supabaseClient.auth.onAuthStateChange((_e,session)=>{currentUser=session?.user||null;updateAuth();});
+  const {data}=await supabaseClient.auth.getSession();
+  currentUser=data.session?.user||null; updateAuth();
+  if(currentUser){await ensureProfile(); await refreshProfile();}
+  supabaseClient.auth.onAuthStateChange(async (_e,session)=>{
+    currentUser=session?.user||null; updateAuth();
+    if(currentUser){await ensureProfile(); await refreshProfile();} else {await refreshProfile();}
+  });
 }
 function updateAuth(){
   const b=document.getElementById('authBtn');
@@ -157,16 +217,34 @@ async function submitRating(){
   const d=ratings._draft||{};
   const keys=['creativity','entertainment','message','emotion','memorable'];
   if(keys.some(k=>!d[k])){showToast('Please rate all 5 categories.');return}
+
+  const {data:existing}=await supabaseClient.from('ratings')
+    .select('id').eq('ad_id',selected.id).eq('user_id',currentUser.id).maybeSingle();
+
   const payload={ad_id:selected.id,user_id:currentUser.id,...d,purchase_interest:document.getElementById('interest').value};
   const {error}=await supabaseClient.from('ratings').upsert(payload,{onConflict:'ad_id,user_id'});
   if(error){showToast(error.message);return}
+
   const body=document.getElementById('review').value.trim();
+  let reviewAdded=false;
   if(body){
     const {error:re}=await supabaseClient.from('reviews').insert({ad_id:selected.id,user_id:currentUser.id,body});
     if(re){showToast(re.message);return}
+    reviewAdded=true;
   }
+
+  // Points: +10 for each new ad rating, +5 for each submitted review.
+  // Updating an existing rating does not award duplicate rating points.
+  let pointsToAdd=(existing?0:10)+(reviewAdded?5:0);
+  if(pointsToAdd>0){
+    const {data:p}=await supabaseClient.from('profiles').select('points').eq('id',currentUser.id).maybeSingle();
+    const nextPoints=(p?.points||0)+pointsToAdd;
+    await supabaseClient.from('profiles').update({points:nextPoints}).eq('id',currentUser.id);
+  }
+
   ratings._draft={};
-  closeModal(); await loadData(); showToast('Your rating was saved!');
+  closeModal(); await loadData(); await refreshProfile();
+  showToast(existing?'Your rating was updated!':'Your rating was saved! +' + pointsToAdd + ' points');
 }
 function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
 function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2800)}
