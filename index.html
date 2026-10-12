@@ -20,6 +20,18 @@ button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bo
 .detail-box{max-width:900px}.detail-hero{padding:24px;border-radius:20px;background:linear-gradient(135deg,#eef5ff,#f7f3ff);border:1px solid #e2e9f5}.detail-eyebrow{font-size:12px;font-weight:800;color:#6b7890;text-transform:uppercase;letter-spacing:.08em}.detail-hero h2{margin:6px 0;font-size:30px}.detail-meta{color:#52617a;margin:0}.detail-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.detail-tag{padding:7px 10px;border-radius:999px;background:#fff;border:1px solid #e1e7f0;font-size:12px;font-weight:700}.detail-score{font-size:28px;font-weight:900;margin-top:18px}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}.detail-stat{padding:15px;border:1px solid #e4ebf5;border-radius:14px;background:#fff}.detail-stat strong{display:block;font-size:20px}.detail-stat span{font-size:12px;color:#718096}.detail-section{margin-top:20px}.detail-section h3{margin:0 0 10px}.bar-row{display:grid;grid-template-columns:145px 1fr 42px;gap:10px;align-items:center;margin:9px 0;font-size:13px}.bar{height:9px;background:#edf1f7;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:#1769ff;border-radius:999px}.detail-reviews{display:grid;gap:10px}.mini-review{padding:13px;border:1px solid #e4ebf5;border-radius:12px;background:#fff}.mini-review-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:6px}.mini-review-head strong{font-size:14px}.mini-review-head small{color:#7b879a}.mini-review-photos{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.mini-review-photos img{width:82px;height:82px;object-fit:cover;border-radius:12px;border:1px solid #e4ebf5;cursor:pointer}.detail-actions{display:flex;gap:10px;margin-top:20px}.detail-actions button{flex:1;border:0;border-radius:14px;padding:13px;font-weight:800;cursor:pointer}.detail-rate{background:#1769ff;color:#fff}.detail-close{background:#f1f4f8;color:#26354d}@media(max-width:650px){.detail-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:115px 1fr 38px}.detail-hero h2{font-size:24px}}
 
 .submit-ad-nav{background:#eef5ff!important;color:#1769ff!important;padding:9px 12px;border-radius:10px!important;font-weight:700}.submit-ad-hero{background:#1769ff;color:#fff;box-shadow:0 10px 24px rgba(23,105,255,.18);padding:13px 20px;border-radius:12px;font-weight:700;margin:15px 0 0 10px}.submit-ad-form{display:grid;gap:12px}.submit-ad-form label{font-size:13px;font-weight:700;color:#40516a}.submit-ad-form input,.submit-ad-form select,.submit-ad-form textarea{width:100%;margin-top:6px;padding:12px 13px;border:1px solid #dce5f0;border-radius:12px;font:inherit;background:#fff;outline:none}.submit-ad-form input:focus,.submit-ad-form select:focus,.submit-ad-form textarea:focus{border-color:#1769ff;box-shadow:0 0 0 4px rgba(23,105,255,.08)}.submit-ad-note{font-size:12px;color:#68768b;background:#f6f9fd;border-radius:12px;padding:10px 12px}.submit-ad-actions{display:flex;gap:10px;justify-content:flex-end}.submit-ad-cancel{background:#eef3f9;color:#40516a;padding:11px 15px;border-radius:10px;font-weight:700}
+
+/* Admin moderation panel */
+.admin-panel{border:1px solid #f0c36d;background:#fffdf7}
+.admin-submission{border:1px solid #e5eaf2;border-radius:14px;padding:16px;margin:12px 0;background:#fff}
+.admin-submission h3{margin:4px 0 8px}.admin-submission p{margin:6px 0;color:#52617a;overflow-wrap:anywhere}
+.admin-submission .admin-note{width:100%;margin:10px 0;padding:11px;border:1px solid #dce5f0;border-radius:10px;font:inherit}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.admin-approve{background:#16834a;color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}
+.admin-reject{background:#b42318;color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}
+.admin-refresh{background:#eef3f9;color:#40516a;padding:9px 12px;border-radius:10px;font-weight:700}
+.admin-video{display:block;width:100%;max-width:420px;max-height:260px;margin-top:10px;border-radius:12px;background:#111}
+
 </style>
 </head>
 <body>
@@ -69,6 +81,12 @@ button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bo
   <p class="hint">See what real Ad Critics think. Like reviews you find helpful.</p>
   <div id="reviewsList" class="reviews-list"><div class="review-empty">Loading reviews…</div></div>
 </section>
+
+<section id="adminPanel" class="panel admin-panel hidden">
+  <div class="section-title"><h2>🛡️ Admin — Ad Submissions</h2><button class="admin-refresh" onclick="loadAdminSubmissions()">↻ Refresh</button></div>
+  <p class="hint">Only administrator accounts can see this panel. Review submissions before publishing them.</p>
+  <div id="adminSubmissions"><div class="review-empty">Checking admin access…</div></div>
+</section>
 <section class="panel">
   <h2>🎯 Top Rated Ads</h2>
   <div id="adRanking"></div>
@@ -80,7 +98,7 @@ button{cursor:pointer;border:0}header{background:rgba(255,255,255,.97);border-bo
 <div class="modal" id="authModal"><div class="modalbox authbox"><button class="close" onclick="closeAuth()">×</button><h2>Sign in to AD REVIEW</h2><p>We'll email you a secure magic link. No password needed.</p><input class="email" id="email" type="email" placeholder="you@example.com"><button class="submit" onclick="sendMagicLink()">Send Magic Link</button><p id="authMsg" class="hint"></p></div></div>
 <div class="toast" id="toast"></div><footer class="footer">AD REVIEW — Rate advertisements, discover what people really think.</footer>
 <script>
-const supabaseClient=window.supabase.createClient(window.SUPABASE_URL,window.SUPABASE_ANON_KEY);let ads=[],selected=null,ratings={},currentUser=null,reviewsCache=[];
+const supabaseClient=window.supabase.createClient(window.SUPABASE_URL,window.SUPABASE_ANON_KEY);let ads=[],selected=null,ratings={},currentUser=null,reviewsCache=[],isAdmin=false;
 const demoAds=[{id:1,brand:'Nike',title:'Winning Spirit',category:'Sports',symbol:'NIKE'},{id:2,brand:'Apple',title:'Shot on iPhone',category:'Technology',symbol:'APPLE'},{id:3,brand:'Coca-Cola',title:'Share a Moment',category:'Food & Beverage',symbol:'COKE'},{id:4,brand:'BMW',title:'The Drive',category:'Automobile',symbol:'BMW'},{id:5,brand:'Samsung',title:'Make It Epic',category:'Technology',symbol:'SAMSUNG'},{id:6,brand:'Local Demo',title:'FreshDrop Juice',category:'Local Business',symbol:'FRESH'}];
 const reviewReactions=['😂 Funny','❤️ Love / Romantic','🥹 Emotional','🌟 Inspiring','🔥 Exciting','😍 Feel-Good','🧠 Thought-Provoking','🎉 Fun','🏆 Premium / Luxury','🤩 Amazing','😐 Boring','👎 Very Bad','❌ Not Effective','😕 Confusing','🥱 Too Long / Slow','🙄 Annoying','😬 Unconvincing','🤷 Forgettable','💸 Not Worth the Ad Spend','💤 No Impact'];
 let selectedReactions=[];let selectedReviewFiles=[];let editingReview=null;let existingReviewPhotoUrls=[];
@@ -186,7 +204,62 @@ async function toggleLike(reviewId){
   if(error){showToast(error.message);return}
   await loadReviews();
 }
-async function loadSession(){const{data}=await supabaseClient.auth.getSession();currentUser=data.session?.user||null;updateAuth();if(currentUser){await ensureProfile();await refreshProfile()}supabaseClient.auth.onAuthStateChange(async(_e,session)=>{currentUser=session?.user||null;updateAuth();if(currentUser){await ensureProfile();await refreshProfile()}else await refreshProfile();await loadLeaderboard();await loadReviews()})}
+
+async function checkAdminAccess(){
+  const panel=document.getElementById('adminPanel');
+  if(!currentUser){isAdmin=false;panel?.classList.add('hidden');return}
+  const {data,error}=await supabaseClient.from('profiles').select('is_admin').eq('id',currentUser.id).maybeSingle();
+  isAdmin=!error&&data?.is_admin===true;
+  panel?.classList.toggle('hidden',!isAdmin);
+  if(isAdmin) await loadAdminSubmissions();
+}
+async function loadAdminSubmissions(){
+  const box=document.getElementById('adminSubmissions');
+  if(!isAdmin){box.innerHTML='<div class="review-empty">Admin access required.</div>';return}
+  box.innerHTML='<div class="review-empty">Loading submissions…</div>';
+  const {data,error}=await supabaseClient.from('ad_submissions')
+    .select('id,user_id,brand,title,featured_person,brand_ambassador,product_name,category,description,media_url,source_url,search_keywords,status,admin_note,created_at')
+    .eq('status','pending').order('created_at',{ascending:true});
+  if(error){box.innerHTML=`<div class="review-empty">Could not load submissions: ${escapeHtml(error.message)}</div>`;return}
+  if(!data?.length){box.innerHTML='<div class="review-empty">🎉 No pending submissions right now.</div>';return}
+  box.innerHTML=data.map(x=>{
+    const video=x.media_url?supabaseClient.storage.from('ad-videos').getPublicUrl(x.media_url).data.publicUrl:'';
+    const source=x.source_url?`<p>🔗 <a href="${escapeHtml(x.source_url)}" target="_blank" rel="noopener noreferrer">Open source link</a></p>`:'';
+    const videoHtml=video?`<video class="admin-video" controls preload="metadata" src="${escapeHtml(video)}"></video>`:'';
+    return `<article class="admin-submission" id="admin-sub-${x.id}">
+      <div class="hint">Submission #${x.id} · ${escapeHtml(new Date(x.created_at).toLocaleString())}</div>
+      <h3>${escapeHtml(x.brand)} — ${escapeHtml(x.title)}</h3>
+      <p><b>Category:</b> ${escapeHtml(x.category||'Other')}</p>
+      ${x.featured_person?`<p><b>Featured person:</b> ${escapeHtml(x.featured_person)}</p>`:''}
+      ${x.brand_ambassador?`<p><b>Brand ambassador:</b> ${escapeHtml(x.brand_ambassador)}</p>`:''}
+      ${x.product_name?`<p><b>Product:</b> ${escapeHtml(x.product_name)}</p>`:''}
+      ${x.search_keywords?`<p><b>Keywords:</b> ${escapeHtml(x.search_keywords)}</p>`:''}
+      ${x.description?`<p><b>Description:</b> ${escapeHtml(x.description)}</p>`:''}
+      ${source}${videoHtml}
+      <label class="hint" for="admin-note-${x.id}">Admin note (optional)</label>
+      <textarea class="admin-note" id="admin-note-${x.id}" rows="2" maxlength="1000" placeholder="Reason or note for this decision">${escapeHtml(x.admin_note||'')}</textarea>
+      <div class="admin-actions">
+        <button class="admin-approve" onclick="reviewAdSubmission(${x.id},'approve')">✓ Approve & Publish</button>
+        <button class="admin-reject" onclick="reviewAdSubmission(${x.id},'reject')">✕ Reject</button>
+      </div>
+    </article>`;
+  }).join('');
+}
+async function reviewAdSubmission(id,action){
+  if(!isAdmin){showToast('Admin access required.');return}
+  const note=document.getElementById(`admin-note-${id}`)?.value.trim()||'';
+  const label=action==='approve'?'approve and publish':'reject';
+  if(!confirm(`Are you sure you want to ${label} submission #${id}?`))return;
+  const {data,error}=await supabaseClient.rpc('admin_review_ad_submission',{
+    p_submission_id:id,p_action:action,p_admin_note:note
+  });
+  if(error){showToast('Could not process submission: '+error.message);return}
+  showToast(action==='approve'?'Advertisement approved and published! AdCoins awarded if configured.':'Submission rejected.');
+  await loadAdminSubmissions();
+  await loadData();
+}
+
+async function loadSession(){const{data}=await supabaseClient.auth.getSession();currentUser=data.session?.user||null;updateAuth();if(currentUser){await ensureProfile();await refreshProfile()}await checkAdminAccess();supabaseClient.auth.onAuthStateChange(async(_e,session)=>{currentUser=session?.user||null;updateAuth();if(currentUser){await ensureProfile();await refreshProfile()}else await refreshProfile();await checkAdminAccess();await loadLeaderboard();await loadReviews()})}
 function updateAuth(){const b=document.getElementById('authBtn');b.textContent=currentUser?'Sign out':'Sign in';b.onclick=currentUser?signOut:openAuth}
 async function signOut(){await supabaseClient.auth.signOut();showToast('Signed out.')}
 async function loadData(){
